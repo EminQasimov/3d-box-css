@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="animation.css" />
+    <link rel="stylesheet" href="box.css" />
+    <link rel="stylesheet" href="example.css" />
+  </head>
+
+  <body>
+    <div class="scene">
+      <!-- 3D BOX -->
+      <div class="box-bounced">
+        <div class="box-jello">
+          <div class="box-cube">
+            <div class="box-side box-cover">
+              <div class="box-cover-side box-cover-left"></div>
+              <div class="box-cover-side box-cover-right"></div>
+              <div class="box-cover-side box-cover-back"></div>
+              <div class="box-cover-side box-cover-front"></div>
+            </div>
+            <div class="box-side box-front">
+              <div class="box-label"></div>
+            </div>
+            <div class="box-side box-back"></div>
+            <div class="box-side box-left"></div>
+            <div class="box-side box-right"></div>
+            <div class="box-side box-bottom"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 3D BOX -->
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <h2>Custom CSS variables</h2>
+      <div class="control">
+        <label for="width">--width</label>
+        <input type="number" id="width-number" value="0" />
+        <input type="range" id="width-range" min="20" max="400" />
+      </div>
+
+      <div class="control">
+        <label for="height">--height</label>
+        <input type="number" id="height-number" value="0" />
+        <input type="range" id="height-range" min="20" max="400" />
+      </div>
+
+      <div class="control">
+        <label for="length">--length</label>
+        <input type="number" id="length-number" value="0" />
+        <input type="range" id="length-range" min="20" max="400" />
+      </div>
+
+      <div class="control">
+        <button id="small" class="button">small</button>
+        <button id="middle" class="button">middle</button>
+        <button id="large" class="button">large</button>
+      </div>
+    </div>
+    <!-- Controls -->
+
+    <script src="example.js"></script>
+  </body>
+</html>

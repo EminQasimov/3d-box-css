@@ -1,0 +1,69 @@
+body {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  font: 1em sans-serif;
+}
+
+.scene {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 2000px;
+}
+
+.controls {
+  width: 300px;
+  padding: 80px 12px;
+  background-color: #e2e8f0;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 8px;
+  user-select: none;
+}
+
+.control > [type="number"] {
+  width: 60px;
+  padding: 4px;
+  border: 1px solid #94a3b8;
+}
+
+label {
+  width: 120px;
+}
+
+#reset {
+  margin-left: auto;
+  width: 80px;
+}
+
+.button {
+  display: inline-block;
+  vertical-align: top;
+  padding: 8px 16px;
+  transition: all 0.1s;
+  font-family: inherit;
+  cursor: pointer;
+  color: #1f2937;
+  text-align: center;
+  border: 1px solid;
+  border-color: #9ca3af;
+  background-image: linear-gradient(to bottom, #efefef, #d1d5db);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.09),
+    0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  background-color: #e5e7eb;
+  background-image: linear-gradient(to bottom, #e5e7eb, #9ca3af);
+}
+.button:active,
+.button.active {
+  border-color: #4b5563;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px rgba(255, 255, 255, 0.09);
+}
