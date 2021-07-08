@@ -10,7 +10,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 2000px;
+  background-color: #1e293b;
 }
 
 .controls {
@@ -45,7 +45,8 @@ label {
 .button {
   display: inline-block;
   vertical-align: top;
-  padding: 8px 16px;
+  padding: 6px 12px;
+  margin: 4px;
   transition: all 0.1s;
   font-family: inherit;
   cursor: pointer;

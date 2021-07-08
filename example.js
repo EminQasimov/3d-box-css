@@ -1,6 +1,8 @@
 // showcase script for demo example
 const $ = (query) => document.querySelector(query)
 
+const box = $(".box-bounced")
+
 const widthRange = $("#width-range")
 const widthNumber = $("#width-number")
 const heightRange = $("#height-range")
@@ -9,10 +11,14 @@ const lengthRange = $("#length-range")
 const lengthNumber = $("#length-number")
 const rotateXRange = $("#rotateX-range")
 const rotateXNumber = $("#rotateX-number")
-const box = $(".box-bounced")
+
+// variant box sizes buttons
 const small = $("#small")
 const middle = $("#middle")
 const large = $("#large")
+const tv = $("#tv")
+const pissa = $("#pissa")
+const tall = $("#tall")
 
 function renderWidth(width = localStorage.width ?? 200) {
   localStorage.width = width
@@ -35,11 +41,11 @@ function renderLength(length = localStorage.depth ?? 200) {
   box.style.setProperty("--length", length + "px")
 }
 
-function getVariant(size) {
+function getVariant(width, height = width, length = width) {
   return () => {
-    renderWidth(size)
-    renderHeight(size)
-    renderLength(size)
+    renderWidth(width)
+    renderHeight(height)
+    renderLength(length)
     restartAnimation()
   }
 }
@@ -65,6 +71,9 @@ function handleLength(e) {
 small.onclick = getVariant(80)
 middle.onclick = getVariant(160)
 large.onclick = getVariant(300)
+tv.onclick = getVariant(700, 400, 50)
+pissa.onclick = getVariant(300, 40, 300)
+tall.onclick = getVariant(120, 500, 120)
 
 box.onclick = restartAnimation
 

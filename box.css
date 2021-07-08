@@ -9,9 +9,9 @@
   --color4: #8e6425;
   --color5: #020201;
   --duration: 0.3s;
-  --rotateX: -20deg;
-  --rotateY: 35deg;
-  --bounce-down-distance: calc(var(--height) * -3);
+  --rotateX: -23deg;
+  --rotateY: 45deg;
+  --bounce-down-distance: -400px;
 
   perspective: 2000px;
   transform-style: preserve-3d;
@@ -163,4 +163,115 @@
   left: 10px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 336 337'%3E%3Cpath fill='%23fff' stroke='%23000' stroke-width='8' d='M4 179.86h152.5v152.5H4v-152.5z'/%3E%3Cpath fill='%23000' d='M34.29 213.52a62.66 62.66 0 007.03 24.4l7.03-10.96-2.03-.75-2.82-1 1.47-2.57 5.16-9.12H34.29zm21.59 0l-5.1 9 2.2.78 2.96 1.06-1.69 2.63-10.12 15.84c8.26 12.54 20.86 20.69 35.16 20.69 23.65 0 42.88-22.02 45-50H55.88z'/%3E%3Cpath fill='%23000' d='M74.29 258.51h10v45h-10v-45z'/%3E%3Cpath fill='%23000' d='M54.29 295.51h50v8h-50v-8z'/%3E%3Cpath fill='%23fff' stroke='%23000' stroke-width='8' d='M179 4.86h152.5v152.5H179V4.86z'/%3E%3Cpath fill='%23000' d='M205.45 125.3h100v10h-100v-10zm17-75h16v70h-16v-70z'/%3E%3Cpath fill='%23000' d='M245.45 55.3h-30l7.5-12.5 7.5-12.5 7.5 12.5 7.5 12.5zm27-5h16v70h-16v-70z'/%3E%3Cpath fill='%23000' d='M295.45 55.3h-30l7.5-12.5 7.5-12.5 7.5 12.5 7.5 12.5z'/%3E%3Cpath fill='%23fff' stroke='%23000' stroke-width='8' d='M179 179.86h152.5v152.5H179v-152.5z'/%3E%3Cpath fill='%23000' d='M257 215.88c-27.6 0-50 15.68-50 35 0-3.32 5.6-6 12.5-6s12.5 2.68 12.5 6c0-3.32 5.6-6 12.5-6s12.5 2.68 12.5 6c0-3.32 5.6-6 12.5-6s12.5 2.68 12.5 6c0-3.32 5.6-6 12.5-6s12.5 2.68 12.5 6c0-19.33-22.4-35-50-35z'/%3E%3Cpath fill='%23000' d='M253 205.88v90a4 4 0 11-8 0v-2h-8v2a12 12 0 1024 0v-90h-8z'/%3E%3Cpath fill='%23fff' stroke='%23000' stroke-width='8' d='M4 4.86h152.5v152.5H4V4.86z'/%3E%3Cpath fill='%23000' d='M60 44.36l20-15 20 15-20 15-20-15zm40 6.25L83 63.36v20l17-12.75v-20zm-40 0l17 12.75v20L60 70.61v-20z'/%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M75 125.68v-15.29c0-8.35-11.4-20.54-18.78-29.08-2.02-2-5.66-2.77-7.58-.87-1.7 1.68-1.57 5.8-.22 7.86l7.44 11.18c1.25 2.12-1.8 3.84-3.63 1.57-9.52-12.9-12.13-15.51-12.13-20.7V59.3c0-3.03-2.22-5.94-5.06-5.94-2.7 0-5.04 2.8-5.04 5.43v40.68c0 5.27 16.65 21.22 16.65 28.65v5.24H75v-7.68zm10 0v-15.29c0-8.35 11.4-20.54 18.78-29.08 2.02-2 5.66-2.77 7.58-.87 1.7 1.68 1.57 5.8.22 7.86l-7.44 11.18c-1.25 2.12 1.8 3.84 3.63 1.57 9.52-12.9 12.13-15.51 12.13-20.7V59.3c0-3.03 2.22-5.94 5.06-5.94 2.7 0 5.04 2.8 5.04 5.43v40.68c0 5.27-16.65 21.22-16.65 28.65v5.24H85v-7.68z' clip-rule='evenodd'/%3E%3C/svg%3E")
     left bottom / contain no-repeat;
+}
+
+/* animations */
+
+.animated.box-bounced {
+  animation: box-bounce-down var(--duration) ease-in forwards;
+}
+
+.animated .box-jello {
+  animation: box-jello calc(var(--duration) * 2.5) ease var(--duration);
+}
+
+.animated .box-cover-front {
+  animation-name: box-cover-front;
+}
+
+.animated .box-cover-back {
+  animation-name: box-cover-back;
+}
+
+.animated .box-cover-right {
+  animation-name: box-cover-right;
+}
+
+.animated .box-cover-left {
+  animation-name: box-cover-left;
+}
+
+@keyframes box-bounce-down {
+  0% {
+    transform: translateY(var(--bounce-down-distance));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes box-jello {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.999, 0.999);
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1.25, 0.7);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(0.75, 1.35);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.05, 0.95);
+  }
+}
+
+@keyframes box-cover-left {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(-190deg);
+  }
+  70% {
+    transform: rotateY(-150deg);
+  }
+  100% {
+    transform: rotateY(-190deg);
+  }
+}
+
+@keyframes box-cover-right {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(170deg);
+  }
+  70% {
+    transform: rotateY(100deg);
+  }
+  100% {
+    transform: rotateY(140deg);
+  }
+}
+
+@keyframes box-cover-back {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(190deg);
+  }
+  70% {
+    transform: rotateX(130deg);
+  }
+  100% {
+    transform: rotateX(140deg);
+  }
+}
+
+@keyframes box-cover-front {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(-190deg);
+  }
+  70% {
+    transform: rotateX(-150deg);
+  }
+  100% {
+    transform: rotateX(-190deg);
+  }
 }
