@@ -9,8 +9,6 @@ const heightRange = $("#height-range")
 const heightNumber = $("#height-number")
 const lengthRange = $("#length-range")
 const lengthNumber = $("#length-number")
-const rotateXRange = $("#rotateX-range")
-const rotateXNumber = $("#rotateX-number")
 
 // variant box sizes buttons
 const small = $("#small")
