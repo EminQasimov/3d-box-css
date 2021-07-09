@@ -3,6 +3,7 @@
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/TY0Q3Spy/ezgif-com-gif-maker.gif)](https://youtu.be/KAaFjv3Ejxg)
 
 ### 1. Use prefixed and minifed version of css file
+if your setup supports css minification or autoprefixing just use regular box.css
 
 ```html
 <link rel="stylesheet" href="box.min.css" />
