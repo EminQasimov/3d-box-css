@@ -16,6 +16,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #1e293b;
+  overflow: hidden;
 }
 
 .controls {
